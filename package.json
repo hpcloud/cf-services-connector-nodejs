@@ -1,0 +1,33 @@
+{
+  "name": "cf-services-connector",
+  "version": "0.2.0",
+  "description": "A module that connects you to the cloud foundry services API via a custom broker",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --compilers coffee:coffee-script test/"
+  },
+  "keywords": [
+    "cloud-foundry",
+    "cloud",
+    "foundry",
+    "cf",
+    "cf-services",
+    "services",
+    "broker"
+  ],
+  "author": "Jamie Paton <jamiep@activestate.com>",
+  "license": "Apache License, Version 2.0",
+  "dependencies": {
+    "restify": "^2.6.0",
+    "logule": "^2.0.0",
+    "level": "^0.17.0-1",
+    "semver": "^2.2.1",
+    "async": "^0.6.2",
+    "levelup": "^0.18.2"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "mocha": "~1.13.0",
+    "supertest": ""
+  }
+}

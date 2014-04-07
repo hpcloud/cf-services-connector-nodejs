@@ -1,0 +1,40 @@
+{
+    "apiVersion": "2.1.0",
+    "authUser": "user",
+    "authPassword": "pass",
+    "defaultVersion": "1.0",
+    "name": "Test Service",
+    "port": 5000,
+    "url": "auto",
+    "services": [{
+        "id": "1c0c1539-bb36-4d42-838c-c27ed511ec0e",
+        "bindable": true,
+        "name": "Test Service",
+        "version": "1.0",
+        "description": "Test Service",
+        "metadata": {
+            "providerDisplayName": "Test Service Ltd.",
+            "tags": [ "echo", "demo" ]
+        },
+        "plans": [{
+            "name": "free",
+            "id": "fd231a47-d6a5-407f-b800-40c4451820a0",
+            "description": "This is the free plan",
+            "public": true,
+            "free": true
+            },
+            {
+            "name": "not-free",
+            "id": "c46c48ab-8719-413b-8ba7-738ac0355eed",
+            "description": "This is not the free plan",
+            "public": true,
+            "free": false
+        }]
+    }],
+    "database": {
+        "enabled": true,
+        "allowOrphanedBindings": false,
+        "databaseFile": "./leveldb",
+        "encryptionKey": "!!changeme!!"
+    }
+}
