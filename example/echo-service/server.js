@@ -17,7 +17,7 @@
 
 'use strict';
 
-var Broker = require('../../');
+var Broker = require('cf-services-connector');
 var Config = require('./config/echo-service');
 
 var broker = new Broker(Config);

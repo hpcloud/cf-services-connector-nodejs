@@ -23,7 +23,6 @@ var Semver = require('semver');
 var Common = require('../common');
 var Events = require('events');
 var Logule = require('logule');
-var Nats = require('nats');
 var Util = require('util');
 
 /**
