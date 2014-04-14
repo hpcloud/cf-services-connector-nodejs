@@ -41,6 +41,7 @@ var Broker = function(opts) {
         apiVersion: String,
         authUser: String,
         authPassword: String,
+        port: Number,
         services: Array
     };
 
@@ -77,6 +78,8 @@ var Broker = function(opts) {
     if (missingServiceOpts.length > 0) {
         throw new Error('Missing service options: ' + missingServiceOpts.join(', '));
     }
+
+    opts.port = process.env.PORT || opts.port;
 
     opts.semver = Semver.parse(opts.apiVersion);
     opts.version = opts.semver.major;
