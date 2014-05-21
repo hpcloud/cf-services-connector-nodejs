@@ -40,6 +40,8 @@ var Broker = function(opts) {
         apiVersion: String,
         authUser: String,
         authPassword: String,
+        database: Object,
+        name: String,
         port: Number,
         services: Array
     };

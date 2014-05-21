@@ -1,7 +1,7 @@
 {
     "apiVersion": "2.1.0",
-    "authUser": "foo",
-    "authPassword": "bar",
+    "authUser": "demouser",
+    "authPassword": "demopassword",
     "defaultVersion": "1.0",
     "name": "Echo Service",
     "port": 5001,
