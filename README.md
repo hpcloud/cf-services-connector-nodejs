@@ -83,7 +83,10 @@ or using the `cf` client:
     cf add-service-broker demo-service --url http://192.168.2.3:5001 --username demo --password
 
 To make the service broker plans accessible to organizations you must make
-a couple of extra curl calls, outlined [here](http://docs.cloudfoundry.org/services/access-control.html).
+a couple of extra curl calls, outlined [here](http://docs.cloudfoundry.org/services/access-control.html). 
+If you are using the `stackato` client:
+
+    stackato update-service-plan --public demo-service
 
 ## Logging
 
