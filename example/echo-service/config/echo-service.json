@@ -1,5 +1,5 @@
 {
-    "apiVersion": "2.1.0",
+    "apiVersion": "2.3.0",
     "authUser": "demouser",
     "authPassword": "demopassword",
     "defaultVersion": "1.0",
