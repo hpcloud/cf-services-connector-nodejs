@@ -46,7 +46,8 @@ module.exports.validateAPIVersion = function (version) {
         if (!req.headers[header]) {
             log.warn(header + ' is missing from the request');
         } else {
-            if (req.headers[header] !== (version.major + '.' + version.minor)) {
+            var pattern = new RegExp('^' + version.major + '\\.\\d+$');
+            if (!req.headers[header].match(pattern)) {
                 log.warn('Incompatible services API version: ' + req.headers[header]);
                 res.status(412);
                 res.end();

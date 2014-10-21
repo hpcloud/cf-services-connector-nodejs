@@ -24,6 +24,10 @@ There is an "echo service" demonstrating full use of the broker in
 `example/echo-service` that should provide a good reference point to get
 started writing your own service.
 
+Once you are in the example/echo-service directory:
+
+  node server.js
+
 The recommended way is to use the connector API directly, for example:
 
 ### Broker (coffeescript):
@@ -76,17 +80,18 @@ The recommended way is to use the connector API directly, for example:
 Once you have the service setup, simply run the following against the
 Cloud Foundry instance you wish to install the service to (requires admin):
 
-    stackato create-service-broker demo-service --url http://192.168.2.3:5001 --user demo --password demo
+    stackato create-service-broker demo-service --url http://<ip>:5001 --user demo --password demo
 
 or using the `cf` client:
 
-    cf add-service-broker demo-service --url http://192.168.2.3:5001 --username demo --password
+    cf add-service-broker demo-service --url http://<ip>:5001 --username demo --password
 
 To make the service broker plans accessible to organizations you must make
 a couple of extra curl calls, outlined [here](http://docs.cloudfoundry.org/services/access-control.html). 
 If you are using the `stackato` client:
 
     stackato update-service-plan --public demo-service
+    stackato update-service-plan --public default --vendor "Echo Service"
 
 ## Logging
 

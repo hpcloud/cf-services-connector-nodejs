@@ -1,6 +1,6 @@
 {
   "name": "echo-service-broker",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple echo service broker for Node.js",
   "main": "server.js",
   "scripts": {
@@ -8,6 +8,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "cf-services-connector": "0.2.1"
+    "cf-services-connector": "0.2.3"
   }
 }
