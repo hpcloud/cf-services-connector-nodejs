@@ -1,4 +1,4 @@
-# Cloud Foundy Services Connector (Node.js)
+# Cloud Foundry Services Connector (Node.js)
 ---
 
 ## About
