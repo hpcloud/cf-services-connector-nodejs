@@ -80,11 +80,13 @@ The recommended way is to use the connector API directly, for example:
 Once you have the service setup, simply run the following against the
 Cloud Foundry instance you wish to install the service to (requires admin):
 
-    stackato create-service-broker demo-service --url http://<ip>:5001 --user demo --password demo
+    stackato create-service-broker demo-service --url http://<ip>:5001 --user demouser --password demopassword
 
 or using the `cf` client:
 
-    cf add-service-broker demo-service --url http://<ip>:5001 --username demo --password
+    cf add-service-broker demo-service --url http://<ip>:5001 --username demouser --password demopassword
+
+The username and password are defined in echo-service/config/echo-service.json
 
 To make the service broker plans accessible to organizations you must make
 a couple of extra curl calls, outlined [here](http://docs.cloudfoundry.org/services/access-control.html). 
