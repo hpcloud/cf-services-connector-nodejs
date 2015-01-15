@@ -1,5 +1,4 @@
 # Cloud Foundy Services Connector (Node.js)
----
 
 ## About
 
@@ -14,19 +13,29 @@ dependencies and memory footprint.
 It's super portable, and doesn't need to be running inside a Stackato or
 Cloud Foundry instance - it only needs Node.js installed.
 
-## Installation
+## Getting Started with Echo
 
-Either `git clone` this repo as the base service skeleton, or: `npm install cf-services-connector` in your new service.
+The example "echo service" demostrates the full use of a broker and should provide a 
+good reference point to get started writing your own service.
 
-## Usage
+On a Stackato VM, run the following commands to download and start the node.js service broker:
 
-There is an "echo service" demonstrating full use of the broker in
-`example/echo-service` that should provide a good reference point to get
-started writing your own service.
+    $ npm install cf-services-connector
+    $ (cd node_modules/cf-services-connector/example/echo-service& node server.js)
 
-Once you are in the example/echo-service directory:
+Create a service broker using the Stackato client:
 
-  node server.js
+    stackato create-service-broker demo-echo-service --url http://<STACKATO-VM-IP>:5001 --user demouser --password demopassword
+
+Make the `default` service plan public:
+
+    st update-service-plan --public default --vendor "Echo Service"
+
+The echo service configurations are in `config/echo-service.json`.
+
+## Creating Your Own Service
+
+`git clone` this repo as the base service skeleton
 
 The recommended way is to use the connector API directly, for example:
 
@@ -75,25 +84,7 @@ The recommended way is to use the connector API directly, for example:
     
 ```
 
-## Register the broker with the CC
-
-Once you have the service setup, simply run the following against the
-Cloud Foundry instance you wish to install the service to (requires admin):
-
-    stackato create-service-broker demo-service --url http://<ip>:5001 --user demo --password demo
-
-or using the `cf` client:
-
-    cf add-service-broker demo-service --url http://<ip>:5001 --username demo --password
-
-To make the service broker plans accessible to organizations you must make
-a couple of extra curl calls, outlined [here](http://docs.cloudfoundry.org/services/access-control.html). 
-If you are using the `stackato` client:
-
-    stackato update-service-plan --public demo-service
-    stackato update-service-plan --public default --vendor "Echo Service"
-
-## Logging
+### Logging
 
 The logging system uses `Logule`. The `debug` and `trace` levels are
 suppressed by default, you can add a `logule.json` to your services base
@@ -108,6 +99,23 @@ directory, with the following to enable debugging:
 ```
 
 See [Logule](https://github.com/clux/logule) for more information.
+
+### Register the broker with the CC
+
+Once you have the service setup and running, simply run the following against the
+Cloud Foundry instance you wish to install the service to (requires admin):
+
+    stackato create-service-broker demo-service --url http://<ip>:<port> --user <username> --password <password>
+
+or using the `cf` client:
+
+    cf add-service-broker demo-service --url http://<ip>:<port> --username <username> --password
+
+To make the service broker plans accessible to organizations you must make
+a couple of extra curl calls, outlined [here](http://docs.cloudfoundry.org/services/access-control.html). 
+If you are using the `stackato` client:
+
+    st update-service-plan <plan-name> --vendor <vendor-name>
 
 ## Further Reading
 
