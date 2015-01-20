@@ -1,6 +1,6 @@
 {
   "name": "cf-services-connector",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A module that connects you to the cloud foundry services API via a custom broker",
   "main": "index.js",
   "scripts": {
