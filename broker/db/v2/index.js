@@ -19,6 +19,7 @@
 
 var Async = require('async');
 var LevelUp = require('level');
+var Encryptor = require('../../../common/encryptor.js');
 
 var Database = function (opts) {
 
@@ -148,7 +149,7 @@ Database.prototype.storeBinding = function (instanceID, bindingID, reply, next) 
     var db = this;
 
     /* Ensure credentials are encrypted */
-    reply = Enryptor.encrypt(JSON.stringify(reply). db.opts.encryptionKey);
+    reply = Encryptor.encrypt(JSON.stringify(reply), db.opts.encryptionKey);
 
     Async.waterfall([
         function (done) {

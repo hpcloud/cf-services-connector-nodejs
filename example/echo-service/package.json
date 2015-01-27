@@ -8,6 +8,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "cf-services-connector": "0.2.4"
+    "cf-services-connector": "0.2.5"
   }
 }
